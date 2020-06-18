@@ -12,6 +12,8 @@
       <AnchorPane prefHeight="601.0" prefWidth="102.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="start" layoutX="20.0" layoutY="134.0" mnemonicParsing="false" onMouseClicked="#start" text="Start" />
+            <Button fx:id="next" layoutX="21.0" layoutY="266.0" mnemonicParsing="false" onAction="#next" text="Next" />
+            <Button fx:id="stop" layoutX="21.0" layoutY="195.0" mnemonicParsing="false" onAction="#stop" text="Stop" />
          </children></AnchorPane>
    </right>
 </BorderPane>

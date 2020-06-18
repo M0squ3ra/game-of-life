@@ -20,6 +20,12 @@ public class Controller {
     @FXML
     private Button start;
 
+    @FXML
+    private Button stop;
+
+    @FXML
+    private Button next;
+
     private Cell[][] cells;
     private Calculator calculator;
 
@@ -44,46 +50,19 @@ public class Controller {
             }
         }
 
+
         calculator = new Calculator(cells,width,height);
-
-        cells[0][0].setAlive(true);
-        cells[0][1].setAlive(true);
-        cells[0][2].setAlive(true);
-        cells[1][0].setAlive(true);
-        cells[1][2].setAlive(true);
-        cells[1][1].setAlive(true);
-        cells[36][0].setAlive(true);
-        cells[36][1].setAlive(true);
-        cells[36][2].setAlive(true);
-        cells[1][3].setAlive(true);
-        cells[2][3].setAlive(true);
-        cells[3][3].setAlive(true);
-        cells[0][36].setAlive(true);
-        cells[1][36].setAlive(true);
-
     }
 
     public void start() {
-        while (true){
-            int rx = (int) (Math.random() * 37);
-            int ry = (int) (Math.random() * 37);
+        System.out.println("start");
+    }
 
-            cells[rx][ry].setAlive(true);
-        }
+    public void stop() {
+        System.out.println("stop");
+    }
 
-
-
-        /*Calculator calculator = new Calculator(cells);
-
-        while (true){  //en el futuro deberia poder detenerse y pausarse
-            int i = 0;
-            try {
-                calculator.nextCicle();
-                cells[i][1].setAlive(true);
-                Thread.sleep(1000);
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-        }*/
+    public void next(){
+        calculator.nextCicle();
     }
 }

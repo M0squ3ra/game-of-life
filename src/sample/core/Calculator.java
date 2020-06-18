@@ -82,12 +82,25 @@ public class Calculator {
         //aca calculamos como debe quedar el tablero en el siguiente ciclo
         //utilizar matriz de booleanos para una vez calculados todas las celdas
         //cambiar el estado de todas las celdas de golpe
-        boolean[][] nextState;
+        boolean[][] nextState = new boolean[width][height];
 
+        //rules
         for (int i = 0; i < height; i++){
             for (int j = 0; j < width; j++){
-
+                int n = getLiveNeighbors(i,j);
+                if(n < 2){
+                    nextState[i][j] = false;
+                } else if (n > 3){
+                    nextState[i][j] = false;
+                } else if(n == 2 && cells[i][j].isAlive()){
+                    nextState[i][j] = true;
+                } else if (n == 2 && !cells[i][j].isAlive()){
+                    nextState[i][j] = false;
+                } else {
+                    nextState[i][j] = true;
+                }
             }
         }
+        setState(nextState);
     }
 }
