@@ -78,7 +78,7 @@ public class Calculator {
         return n;
     }
 
-    public void nextCicle(){
+    public void nextCycle(){
         //aca calculamos como debe quedar el tablero en el siguiente ciclo
         //utilizar matriz de booleanos para una vez calculados todas las celdas
         //cambiar el estado de todas las celdas de golpe

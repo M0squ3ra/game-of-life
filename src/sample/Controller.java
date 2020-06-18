@@ -1,16 +1,14 @@
 package sample;
 
-import javafx.event.Event;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
 import sample.core.Calculator;
 import sample.core.Cell;
-
-import java.util.Random;
 
 public class Controller {
 
@@ -28,6 +26,7 @@ public class Controller {
 
     private Cell[][] cells;
     private Calculator calculator;
+    private Timeline timeline;
 
     public void initialize(){
 
@@ -52,17 +51,20 @@ public class Controller {
 
 
         calculator = new Calculator(cells,width,height);
+
+        timeline = new Timeline(new KeyFrame(Duration.seconds(0.75),(actionEvent -> calculator.nextCycle())));
+        timeline.setCycleCount(Timeline.INDEFINITE);
     }
 
     public void start() {
-        System.out.println("start");
+        timeline.play();
     }
 
     public void stop() {
-        System.out.println("stop");
+        timeline.stop();
     }
 
     public void next(){
-        calculator.nextCicle();
+        calculator.nextCycle();
     }
 }
