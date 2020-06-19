@@ -9,7 +9,7 @@
       <AnchorPane fx:id="anchorPane" prefHeight="601.0" prefWidth="601.0" style="-fx-background-color: #373737;" />
    </center>
    <right>
-      <AnchorPane prefHeight="601.0" prefWidth="102.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="601.0" prefWidth="102.0" style="-fx-background-color: #373737;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="start" layoutX="20.0" layoutY="134.0" mnemonicParsing="false" onMouseClicked="#start" text="Start" />
             <Button fx:id="next" layoutX="21.0" layoutY="266.0" mnemonicParsing="false" onAction="#next" text="Next" />

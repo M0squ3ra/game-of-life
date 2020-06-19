@@ -49,9 +49,7 @@ public class Controller {
             }
         }
 
-
         calculator = new Calculator(cells,width,height);
-
         timeline = new Timeline(new KeyFrame(Duration.seconds(0.75),(actionEvent -> calculator.nextCycle())));
         timeline.setCycleCount(Timeline.INDEFINITE);
     }
