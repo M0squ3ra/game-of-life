@@ -24,9 +24,14 @@ public class Controller {
     @FXML
     private Button next;
 
+    @FXML
+    private Button reset;
+
     private Cell[][] cells;
     private Calculator calculator;
     private Timeline timeline;
+    private int width = 37;
+    private int height = 37;
 
     public void initialize(){
 
@@ -34,9 +39,6 @@ public class Controller {
         gridPane.setVgap(1);
         gridPane.setHgap(1);
         anchorPane.getChildren().add(gridPane);
-
-        int width = 37;
-        int height = 37;
 
         //puede ser que h y w esten al revez
         cells = new Cell[width][height];
@@ -64,5 +66,12 @@ public class Controller {
 
     public void next(){
         calculator.nextCycle();
+    }
+
+    public void reset(){
+        timeline.stop();
+        for(int i = 0;i < height; i++)
+            for(int j = 0; j < width; j++)
+                cells[i][j].setAlive(false);
     }
 }
