@@ -8,5 +8,5 @@ Made with JavaFX and Maven to compile
 
 Run:
 ```
-java - jar game-of-life.jar 
+java -jar game-of-life.jar 
 ```
